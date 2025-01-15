@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+  <ion-row>
+    @for (tipo of tipos; track tipo.idTipo) {
+      <ion-chip color="{{ tipo.idTipo == tipoElegido ? 'dark' : 'default' }}">
+      <ion-icon color="{{ tipo.idTipo == tipoElegido ? 'danger' : 'default' }}" name="pin"></ion-icon>
+      <ion-label (click)="selectTipo(tipo.idTipo)">
+        {{ tipo.descripcionTipo }}
+      </ion-label>
+    </ion-chip>
+    }
+  </ion-row>
+  <ion-row>
+    <p>Radio de búsqueda en kms({{ radio.value || 0 }})</p>
+  </ion-row>
+  <ion-row>
+    <ion-range #radio min="0" max="1000" step="10">
+      <ion-icon slot="start" name="arrow-back"></ion-icon>
+      <ion-icon slot="end" name="arrow-forward"></ion-icon>
+    </ion-range>
+  </ion-row>
+  <ion-row>
+
+      <ion-button expand="block" (click)="getNegocios(radio.value.valueOf())">Buscar</ion-button>
+
+  </ion-row>
+
+</ion-grid>
+<div id="mapa"></div>
+</ion-content>
