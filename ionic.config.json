@@ -1,7 +1,0 @@
-{
-  "name": "AppNegocios",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
