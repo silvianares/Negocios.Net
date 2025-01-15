@@ -1,0 +1,54 @@
+<div class="login-container">
+    <h2>Login</h2>
+  
+    <!-- Formulario de Login -->
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  
+      <!-- Campo de usuario -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          required 
+          [(ngModel)]="email"  
+          name="username"  
+          #usernameField="ngModel"  
+          class="form-control" 
+          placeholder="Enter your username">
+        
+        <!-- Mensaje de error si el campo username es inválido -->
+        <div *ngIf="usernameField.invalid && usernameField.touched" class="error-message">
+          <p>Username is required</p>
+        </div>
+      </div>
+  
+      <!-- Campo de contraseña -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          required 
+          [(ngModel)]="password"  
+          name="password"  
+          #passwordField="ngModel"  
+          class="form-control" 
+          placeholder="Enter your password">
+        
+        <!-- Mensaje de error si el campo password es inválido -->
+        <div *ngIf="passwordField.invalid && passwordField.touched" class="error-message">
+          <p>Password is required</p>
+        </div>
+      </div>
+  
+      <!-- Mensaje de error si el login falla -->
+      <div *ngIf="loginFailed" class="error-message">
+        <p>Invalid username or password</p>
+      </div>
+  
+      <!-- Botón de login -->
+      <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+  
