@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "APINegocios",
+			"path": "../APINegocios"
+		},
+		{
+			"name": "Negocios.Net",
+			"path": "."
+		}
+	],
+	"settings": {}
+}

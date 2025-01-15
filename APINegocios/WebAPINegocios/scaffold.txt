@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Data Source=localhost;Initial Catalog=ProyectoNegocios;Integrated Security=True;TrustServerCertificate=True" -Provider Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force -project WebAPINegocios
